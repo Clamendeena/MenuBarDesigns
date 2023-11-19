@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 500vh;
+}
+
+.about-section {
+    display: none;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.menu-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 90%;
+}
+
+
+
+.menu-item:hover {
+    background-color: #55555584;
+}
+
+.menu-item.active {
+    background-color: #55555584;
+    
+}
+.fa-home,.fa-chart-bar,.fa-info-circle   {
+    
+    font-size: 40px;
+    animation: slideIn 2.5s ease-in-out;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(90px); 
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+@keyframes slideOut {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.menu-item.active::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(10px);
+}
+
+.menu-item.active:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}

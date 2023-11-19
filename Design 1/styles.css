@@ -6,13 +6,6 @@ body {
     height: 500vh;
 }
 
-.about-section {
-    display: none;
-    text-align: center;
-    padding: 50px;
-    color: #fff;
-}
-
 .menu-bar {
     position: fixed;
     top: 50%;
